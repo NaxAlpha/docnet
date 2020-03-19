@@ -1,0 +1,23 @@
+version: '3'
+services:
+  ui:
+    build: ui
+    ports:
+      - "8080:8080"
+    hostname: ui
+    environment:
+      RABBIT_HOST: rabbit
+    depends_on:
+      - rabbit
+  rabbit:
+    image: "rabbitmq:3"
+    hostname: rabbit
+    ports:
+      - "5672:5672"
+  classifier:
+    build: classifier
+    depends_on:
+      - rabbit
+    environment:
+      UI_HOST: http://ui:8080
+      RABBIT_HOST: rabbit
