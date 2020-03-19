@@ -1,7 +1,7 @@
 FROM python:3.7
 ADD requirements.txt /tmp
 WORKDIR /tmp
-RUN pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
+RUN pip install -r requirements.txt
 ADD . /app
 WORKDIR /app
-CMD uvicorn --host=0.0.0.0 port=8080 main:app
+CMD gunicorn --bind=0.0.0.0:8080 main:app
