@@ -1,4 +1,3 @@
-jinja2
-uvicorn
-fastapi
-aiofiles
+pika
+flask
+gunicorn
