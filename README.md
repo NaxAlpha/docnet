@@ -29,6 +29,14 @@ After training, model is exported to google cloud
 storage. After downloading model, extract that in 
 [classifier model](classifier/model) directory.
 
+### Using pre-trained model
+
+If you want to try out the demo without training, 
+you can download pre-trained model from above
+notebook [here](https://storage.googleapis.com/nax-temp/docnet/model.zip).
+Extract the model in classifier/model directory and
+follow the steps below. 
+
 ### Running an end-to-end demo
 
 To run the application, you will need docker and
@@ -66,5 +74,4 @@ Resume
 Memo
 Note
 ```
-
 
